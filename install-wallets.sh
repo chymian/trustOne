@@ -13,7 +13,7 @@ BTRFS_MNT_OPTS_DEF="defaults,noatime,compress=lzo,autodefrag"
 USER_UID_DEF=1000
 USER_HOME_DEF=`grep $USER_UID_DEF /etc/passwd|cut -d: -f6`
 CC_FLAGS_DEF="--enable-upnp-default --enable-silent-rules --enable-qrencode" 
-PRCT_DIR_DEF="$HOME/trustOne"
+P_HOME_DEF="$HOME/trustOne"
 
 DEBIAN_FRONTEND=noninteractive
 PREPARED_MARKER=$HOME/.install-wallets_prepared
@@ -27,7 +27,20 @@ BLKCHN_VOL_MNT=${BLKCHN_VOL_MNT:=$BLKCHN_VOL_MNT_DEF}
 BTRFS_MNT_OPTS=${BTRFS_MNT_OPTS:=$BTRFS_MNT_OPTS}
 USER_HOME=${USER_HOME:=$USER_HOME_DEF}
 CC_FLAGS=${CC_FLAGS:=$CC_FLAGS_DEF}
-P_HOME=${P_HOME:=$PRCT_DIR_DEF}
+P_HOME=${P_HOME:=$P_HOME_DEF}
+
+
+echo ALL_WALLETS     $ALL_WALLETS   
+echo BLKCHN_VOL_MNT  $BLKCHN_VOL_MNT
+echo BTRFS_MNT_OPTS  $BTRFS_MNT_OPTS
+echo USER_HOME       $USER_HOME
+echo CC_FLAGS        $CC_FLAGS
+echo P_HOME          $P_HOME
+
+
+
+
+
 
 # prepare system
 prepare_system() {
