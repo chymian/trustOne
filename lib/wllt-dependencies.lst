@@ -1,4 +1,27 @@
-	sudo \apt-get install -y --force-yes build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils \
-		libdb4.8-dev libdb4.8++-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev \
-		libboost-test-dev libboost-thread-dev libminiupnpc-dev libzmq3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev \
-		qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
+automake
+autotools-dev
+bsdmainutils
+build-essential
+libboost-all-dev
+libboost-chrono-dev
+libboost-filesystem-dev
+libboost-program-options-dev
+libboost-system-dev
+libboost-test-dev
+libboost-thread-dev
+libdb4.8-dev
+libdb4.8++-dev
+libevent-dev
+libminiupnpc-dev
+libprotobuf-dev
+libqrencode-dev
+libqt5core5a
+libqt5dbus5
+libqt5gui5
+libssl-dev
+libtool
+libzmq3-dev
+pkg-config
+protobuf-compiler
+qttools5-dev
+qttools5-dev-tools

@@ -27,13 +27,13 @@ BLKCHN_VOL_MNT=${$BLKCHN_VOL_MNT:-$BLKCHN_VOL_MNT_DEF}
 BTRFS_MNT_OPTS=${$BTRFS_MNT_OPTS:-$BTRFS_MNT_OPTS}
 USER_HOME=${$USER_HOME:-$USER_HOME_DEF}
 CC_FLAGS=${CC_FLAGS:-$CC_FLAGS_DEF}
-PRJT_DIR=${PRJT_DIR:-$PRCT_DIR_DEF}
+P_HOME=${P_HOME:-$PRCT_DIR_DEF}
 
 # prepare system
 prepare_system() {
 	sudo add-apt-repository -y ppa:bitcoin/bitcoin
 	sudo \apt-get update
-	sudo \apt-get install -y --force-yes <(cat $PRJT_DIR/wllt-dependencies.lst $PRJT_DIR/lib/wllt-dependencies.lst)
+	sudo \apt-get install -y --force-yes $(cat $P_HOME/wllt-dependencies.lst $P_HOME/lib/wllt-dependencies.lst|xargs)
 
 	touch $PREPARED_MARKER
 }
@@ -51,8 +51,8 @@ echo
 }
 
 # if the dependencies file was updated since last run, go, get the system prepared again
-[ $PREPARED_MARKER -ot $PRJT_DIR/wllt-dependencies.lst ] && PREP_FLAG=true
-[ $PREPARED_MARKER -ot $PRJT_DIR/lib/wllt-dependencies.lst ] && PREP_FLAG=true
+[ $PREPARED_MARKER -ot $P_HOME/wllt-dependencies.lst ] && PREP_FLAG=true
+[ $PREPARED_MARKER -ot $P_HOME/lib/wllt-dependencies.lst ] && PREP_FLAG=true
 [ $PREP_FLAG ] && prepapre_system
 
 
