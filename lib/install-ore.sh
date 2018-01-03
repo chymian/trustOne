@@ -32,7 +32,7 @@ src_compile() {
 ###################################################################################
 SUB_VOL=`echo $BLK_DIR|tr "/" "-"`
 
-source $PRJT_DIR/lib/wllt-functions.sh
+source $P_HOME/lib/wllt-functions.sh
 
 # Install from git
 git_install
