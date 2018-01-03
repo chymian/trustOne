@@ -36,6 +36,7 @@ echo BTRFS_MNT_OPTS  $BTRFS_MNT_OPTS
 echo USER_HOME       $USER_HOME
 echo CC_FLAGS        $CC_FLAGS
 echo P_HOME          $P_HOME
+echo
 
 
 
@@ -49,6 +50,7 @@ prepare_system() {
 	sudo \apt-get install -y --force-yes $(cat $P_HOME/wllt-dependencies.lst $P_HOME/lib/wllt-dependencies.lst|xargs)
 
 	touch $PREPARED_MARKER
+	sudo \apt-get clean
 }
 
 usage() {
@@ -66,7 +68,7 @@ echo
 # if the dependencies file was updated since last run, go, get the system prepared again
 [ $PREPARED_MARKER -ot $P_HOME/wllt-dependencies.lst ] && PREP_FLAG=true
 [ $PREPARED_MARKER -ot $P_HOME/lib/wllt-dependencies.lst ] && PREP_FLAG=true
-[ $PREP_FLAG ] && prepapre_system
+[ $PREP_FLAG ] && prepare_system
 
 
 

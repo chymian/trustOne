@@ -21,7 +21,7 @@ DESC_CATEGORIES=Network
 src_compile() {
 	./autogen.sh
 	./configure --prefix=/opt/$BASE_NAME $CC_FLAGS
-	make -j$(nproc)
+	make -j$(nproc) || exit 1
 	sudo make install
 }
 

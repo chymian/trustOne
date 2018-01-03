@@ -48,11 +48,11 @@ blkchn_mnt_create() {
 	}
 	# mount-entry for BLKCHN
 	[ `grep -q $BLK_DIR /etc/fstab` ] || {
-		printf "LABEL=blkchn\t\t\t$USER_HOME/$BLK_DIR\tbtrfs\t$BTRFS_MNT_OPTS,subvol=$SUB_VOL\t0 0" >> /etc/fstab
+	sudo	printf "LABEL=blkchn\t\t\t$USER_HOME/$BLK_DIR\tbtrfs\t$BTRFS_MNT_OPTS,subvol=$SUB_VOL\t0 0" >> /etc/fstab
 	}
 }
 
 # mount blkchn sub-vol
 blkchn_mount() {
-	mount -a
+	sudo mount -a
 }
